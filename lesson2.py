@@ -1,4 +1,4 @@
-# семинар по ПРОГРАММИРОВАНИЮ 2
+# СЕМИНАР ПО ПРОГРАММИРОВАНИЮ №2
 # Задача 0. Дано число N. Найти все его делители. Для каждого делителя укажите чётный он или нечётный.
 # 10 -> 10 (чётный), 5(нечётный), 2 (чётный), 1(нечётный)
 
@@ -17,17 +17,18 @@
 
 def check(num):
     if num % 2 == 0:
-        return 'четное'
+        return "четное"
     else:
-        return 'нечетное'
+        return "нечетное"
 
 
 def zadacha1():
-    number = int(input('Введите число: '))
+    number = int(input("Введите число: "))
 
-    for i in range(1, number+1):
+    for i in range(1, number + 1):
         if number % i == 0:
-            print(f'{i} {check(i)}')
+            print(f"{i} {check(i)}")
+
 
 # zadacha1()
 
@@ -38,7 +39,7 @@ def zadacha1():
 def zadacha2():
     for x in range(0, 2):
         for y in range(0, 2):
-            print(f'{x} | {y} | {int(not x or y)}')
+            print(f"{x} | {y} | {int(not x or y)}")
 
 
 # zadacha2()
@@ -49,18 +50,18 @@ def zadacha2():
 
 # «qwe»«qwertyqwe»-> 2
 
+
 def zadacha3():
-    substring = input('Введите строку: ')
-    phrase = input('введите фразу: ')
+    substring = input("Введите строку: ")
+    phrase = input("введите фразу: ")
     length_substr = len(substring)
     length_phrase = len(phrase)
     count = 0
 
     for i in range(length_phrase):
-        if phrase[i: i+length_substr] == substring:
+        if phrase[i : i + length_substr] == substring:
             count += 1
-    print(
-        f' в фразе\n{phrase}\подстрока {substring} встречается {count} раз(-а)')
+    print(f" в фразе\n{phrase}\подстрока {substring} встречается {count} раз(-а)")
 
 
 # zadacha3()
@@ -69,11 +70,12 @@ def zadacha3():
 # Задача 3. Дано число N. Заполните список длиной N элементами 1, -3, 9, -27, 81, -243...
 # N = 5 -> [1, -3, 9, -27, 81]
 
+
 def zadacha4():
     numbers = []
-    n = int(input('Введите число: '))
+    n = int(input("Введите число: "))
     for el in range(n):
-        numbers.append((-3)**el)
+        numbers.append((-3) ** el)
     print(numbers)
 
 
@@ -82,9 +84,10 @@ def zadacha4():
 # -------------------
 # Задача 4. Найдите все числа до 10000, у который количество делителей равно 10.
 
+
 def subzadacha5(num: int):
     count = 0
-    for i in range(1, num+1):
+    for i in range(1, num + 1):
         if num % i == 0:
             count += 1
     return count
@@ -93,31 +96,32 @@ def subzadacha5(num: int):
 def zadacha5():
     for i in range(1, 10001):
         if subzadacha5(i) == 10:
-            print(f'{i}\t', end='')
+            print(f"{i}\t", end="")
 
 
 # zadacha5()
 
 # еще решение это задачки
 
+
 def zadacha6():
     count = 0
     for num in range(1, 10001):
         count_div = 0
-        for div in range(1, num+1):
+        for div in range(1, num + 1):
             if num % div == 0:
                 count_div += 1
         if count_div == 10:
             count += 1
             print(num)
-    print(f'Количество чисел, у которых 10 делителей, равно {count}')
+    print(f"Количество чисел, у которых 10 делителей, равно {count}")
 
 
 # zadacha6()
 
 # -------------------
 
-# семинар по ТЕСТИРОВАНИЮ 2
+# СЕМИНАР ПО ТЕСТИРОВАНИЮ №2
 
 # По данному целому неотрицательному n вычислите
 # значение n!. N! = 1 * 2 * 3 * … * N (произведение всех
@@ -181,10 +185,12 @@ def zadacha6():
 # Input: 6 -> -20 30 -40 50 10 -10
 # Output: 2
 
+
 # -------------------
 def zadacha7():
     import random
-    n = int(input('введите кол-во дней: '))
+
+    n = int(input("введите кол-во дней: "))
     i = 0
     x = 0
     list = []
@@ -222,9 +228,11 @@ def zadacha7():
 # Input: 5 -> 5 1 6 5 9
 # Output: 1 9
 
+
 def zadacha8():
     import random
-    n = int(input('введите кол-во арбузов на рынке:'))
+
+    n = int(input("введите кол-во арбузов на рынке:"))
     list = []
     i = 0
     for _ in range(n):
@@ -238,7 +246,8 @@ def zadacha8():
             max = list[i]
         i += 1
     print(list)
-    print(f'Минимальный {min}, Максимальный {max}')
+    print(f"Минимальный {min}, Максимальный {max}")
+
 
 # zadacha8()
 
@@ -248,5 +257,5 @@ def zadacha8():
 i = 10
 while 100 > i:
     if i % 4 == 0 and i % 6 != 0:
-        print(i, end=' ')
+        print(i, end=" ")
     i += 1
